@@ -1,0 +1,91 @@
+* {
+  font-family: "poppins", sans-serif;
+}
+
+.register {
+  background-color: white;
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.col-1-side-image {
+  background-image: url("https://images.moneycontrol.com/static-mcnews/2021/06/Zoya-Hussain-in-Grahan.jpg?impolicy=website&width=1600&height=900");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 10px 0 0 30px;
+  width: 900px;
+  height: 800px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.col-1-side-image p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+}
+
+.col-right {
+  top: 40%;
+  left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box {
+  width: 350px;
+  box-sizing: border-box;
+}
+
+.input-box h2 {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.input-box span {
+  font-size: small;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 10px 0 10px;
+}
+
+.form input {
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.btn button {
+  background-color: black;
+  color: white;
+  margin-left: 150px;
+}
+
+.main-page {
+  text-align: center;
+}
