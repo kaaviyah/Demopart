@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Demopart/static/css/main.e50090db.css",
+    "main.js": "/Demopart/static/js/main.da3ff60a.js",
+    "static/js/787.b65728d7.chunk.js": "/Demopart/static/js/787.b65728d7.chunk.js",
+    "index.html": "/Demopart/index.html",
+    "main.e50090db.css.map": "/Demopart/static/css/main.e50090db.css.map",
+    "main.da3ff60a.js.map": "/Demopart/static/js/main.da3ff60a.js.map",
+    "787.b65728d7.chunk.js.map": "/Demopart/static/js/787.b65728d7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e50090db.css",
+    "static/js/main.da3ff60a.js"
+  ]
+}
