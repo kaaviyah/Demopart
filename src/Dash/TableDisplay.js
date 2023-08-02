@@ -1,6 +1,7 @@
 import {React, useState } from "react";
 import InputDisplay from "./InputDisplay";
-import './Mainpage.css'
+
+import "./Mainpage.css";
 
 
 function TableDisplay({tableData}) {
