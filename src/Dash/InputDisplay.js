@@ -32,7 +32,7 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
         </div>
 
         <div className="btn1">
-          <button className="btn1"type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit}>
             Add
           </button>
         </div>
