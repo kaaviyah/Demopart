@@ -8,7 +8,7 @@ import TableDisplay from "./TableDisplay";
 
 function Mainpage() {
   // let navigate=useNavigate();
-  const[activeTab, setActiveTab]=useState('Title');
+  const[activeTab, setActiveTab]=useState('Form');
   const [tableData, setTableData] = useState([]);
   const [formInputData, setformInputData] = useState({
     name: "",
@@ -45,20 +45,21 @@ function Mainpage() {
   return (
     <div>
       <nav className="navbar">
-        <h1 className="text">Hello,{location.state.username}</h1>
+        {/* <h1 className="text">Hello,{location.state.username}</h1> */}
+        <h1 className="text">User Intellect</h1>
 
         <div className="container">
           <ul className="nav-link">
             <li >
-            <button id="butt" onClick={()=>handleTabChange('Title')}>Title</button></li>
+            <button id="butt" onClick={()=>handleTabChange('Form')}>Form</button></li>
 
             <li >
-            <button id="butt" onClick={()=>handleTabChange('Phone')}>Phone</button></li>
+            <button id="butt" onClick={()=>handleTabChange('PhoneBook')}>PhoneBook</button></li>
           </ul>
         </div>
       </nav>
       {
-        activeTab ==='Title'?<InputDisplay
+        activeTab ==='Form'?<InputDisplay
         handleChange={handleChange}
         formInputData={formInputData}
         handleSubmit={handleSubmit}

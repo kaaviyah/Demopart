@@ -7,7 +7,7 @@ import "./Mainpage.css";
 function TableDisplay({tableData}) {
   return (
     <div>
-      <table border={1} >
+      <table  >
         <thead>
           <tr>
             <th>Name</th>

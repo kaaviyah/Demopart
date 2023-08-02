@@ -15,7 +15,7 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
           />
 
           <input
-            type="number"
+            type="tel"
             name="password"
             value={formInputData.password || ""}
             placeholder="Phone Number"
@@ -26,15 +26,16 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
             type="text"
             name="country"
             value={formInputData.country || ""}
-            placeholder="Country Name"
+            placeholder="Country"
             onChange={handleChange}
           />
+        
         </div>
-
         <div className="btn1">
           <button type="submit" onClick={handleSubmit}>
             Add
           </button>
+         
         </div>
       </div>
     </div>

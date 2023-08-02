@@ -84,6 +84,9 @@
   background-color: black;
   color: white;
   margin-left: 150px;
+  height: 30px;
+  width: 70px;
+  border-radius: 0.5rem;
 }
 
 .main-page {
