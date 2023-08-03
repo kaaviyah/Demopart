@@ -12,6 +12,7 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
             value={formInputData.name || ""}
             placeholder="Name"
             onChange={handleChange}
+           
           />
 
           <input
@@ -20,6 +21,7 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
             value={formInputData.password || ""}
             placeholder="Phone Number"
             onChange={handleChange}
+            
           />
 
           <input
@@ -28,6 +30,7 @@ function InputDisplay({ handleChange, formInputData, handleSubmit }) {
             value={formInputData.country || ""}
             placeholder="Country"
             onChange={handleChange}
+           
           />
         
         </div>

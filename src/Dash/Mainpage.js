@@ -13,16 +13,22 @@ function Mainpage() {
   const [formInputData, setformInputData] = useState({
     name: "",
     country: "",
-    pass: "",
+    phonenumber: "",
   });
   const handleTabChange=(tab)=>{
     setActiveTab(tab);
   }
+  const cap=(str)=>{
+    return str.charAt(0).toUpperCase() +str.slice(1);
+  }
   const handleChange = (evnt) => {
+
     const newInput = (data) => ({
       ...data,
       [evnt.target.name]: evnt.target.value,
     });
+    // const newInput =evnt.target.value;
+    // const cap=newInput.charAt(0).toUppercase()+evnt.target.value.slice(1);
     setformInputData(newInput);
   };
   console.log(formInputData);
@@ -30,11 +36,15 @@ function Mainpage() {
     evnt.preventDefault();
     const checkEmptyInput = !Object.values(formInputData).every(
       (res) => res === ""
-    );
+);
     if (checkEmptyInput) {
-      const newData = (data) => [...data, formInputData];
+      const capname=cap(formInputData.name);
+      const capcon=cap(formInputData.country);
+      formInputData.country=capcon
+      formInputData.name=capname;
+      const newData = (data) => [...data,formInputData];
       setTableData(newData);
-      const emptyInput = { name: "", country: "", password: "" };
+      const emptyInput = { name: "", country: "", phonenumber: "" };
       setformInputData(emptyInput);
     }
   };
