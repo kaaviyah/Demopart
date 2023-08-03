@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Demopart/static/css/main.132933b4.css",
-    "main.js": "/Demopart/static/js/main.9668792e.js",
+    "main.css": "/Demopart/static/css/main.f31344e5.css",
+    "main.js": "/Demopart/static/js/main.543e629e.js",
     "static/js/787.b65728d7.chunk.js": "/Demopart/static/js/787.b65728d7.chunk.js",
     "index.html": "/Demopart/index.html",
-    "main.132933b4.css.map": "/Demopart/static/css/main.132933b4.css.map",
-    "main.9668792e.js.map": "/Demopart/static/js/main.9668792e.js.map",
+    "main.f31344e5.css.map": "/Demopart/static/css/main.f31344e5.css.map",
+    "main.543e629e.js.map": "/Demopart/static/js/main.543e629e.js.map",
     "787.b65728d7.chunk.js.map": "/Demopart/static/js/787.b65728d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.132933b4.css",
-    "static/js/main.9668792e.js"
+    "static/css/main.f31344e5.css",
+    "static/js/main.543e629e.js"
   ]
 }
