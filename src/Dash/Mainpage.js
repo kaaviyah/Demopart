@@ -10,6 +10,7 @@ function Mainpage() {
   // let navigate=useNavigate();
   const[activeTab, setActiveTab]=useState('Form');
   const [tableData, setTableData] = useState([]);
+  // const[editedIndex, setEditedIndex]=useState(-1);
   const [formInputData, setformInputData] = useState({
     name: "",
     country: "",
@@ -32,6 +33,23 @@ function Mainpage() {
     setformInputData(newInput);
   };
   console.log(formInputData);
+  // const handleUpdate=(index,updatedData)=>{
+  //   const updatedDataList=[...tableData];
+  //   updatedDataList[index]=updatedData
+  //   setTableData(updatedDataList);
+    
+   
+  // };
+  const handleDelete=(index)=>{
+    setTableData((prevData)=>prevData.filter((item)=>item.index !==index));
+  };
+  // const handleUpdateData=(index, updatedData)=>{
+  //   const updatedDataList=[...tableData];
+  //   updatedDataList[index]=updatedData;
+  //   setTableData(updatedDataList);
+  //   setEditedIndex(-1);
+
+  // }
   const handleSubmit = (evnt) => {
     evnt.preventDefault();
     const checkEmptyInput = !Object.values(formInputData).every(
@@ -52,6 +70,8 @@ function Mainpage() {
   const { username } = useParams();
   const location = useLocation();
   console.log(location.state.username);
+  
+ 
   return (
     <div>
       <nav className="navbar">
@@ -76,7 +96,10 @@ function Mainpage() {
       />:
       
       
-       <TableDisplay tableData={tableData} /> 
+       <TableDisplay tableData={tableData} 
+      //  onUpdate={handleUpdate} 
+       onDelete={handleDelete}
+       /> 
       }
     </div>
   );
