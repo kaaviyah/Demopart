@@ -13,13 +13,13 @@ function Login() {
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
+  const [ error,setError] = useState("");
   const [success, setSuccess] = useState("");
   const onChange = (event) => {
     setInput({ ...input, [event.target.name]: event.target.value });
   };
   const nameValidation = (name) => {
-    const nameRegex = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
+    const nameRegex = /^[A-Za-z][A-Za-z0-9_]{5,29}$/;
     return nameRegex.test(name);
   };
   const emailValidation = (email) => {

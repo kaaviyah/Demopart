@@ -1,24 +1,42 @@
-import { promiseToCallback } from "@azure/core-http";
-import {React, useState } from "react";
-import InputDisplay from "./InputDisplay";
-
+import { React, useState } from "react";
 import "./Mainpage.css";
+function TableDisplay({ tableData, cap }) {
+  const [rows, setRows] = useState(tableData);
 
+  
+  const editRow = (row) => {
+    const updatedRows = rows.map((r) => {
+      if (r === row) {
+        return { ...r, editing: true };
+      }
 
-function TableDisplay({tableData, onDelete}) {
-  const [data, setData]=useState(tableData);
-  const [editableRowId, setEditableRowId]=useState(null);
-  const handleEdit=(id)=>{
-    setEditableRowId(id);
+      return r;
+    });
+    setRows(updatedRows);
   };
-  const handleSave=(id, updatedData)=>{
-setData((prevData)=>prevData.filter((row)=>(row.id==id?{...row.id !==id}:row))
-);
-setEditableRowId(null);
-  }
+  const saveRow = (row) => {
+    const capname = cap(row.name);
+      const capcon = cap(row.country);
+      row.country = capcon;
+      row.name = capname;
+    const updatedRows = rows.map((r) => {
+      if (r === row) {
+        return { ...r, editing: false };
+      }
+
+      return r;
+    });
+
+    setRows(updatedRows);
+  };
+  const deleteRow = (index) => {
+    const updatedRows = [...rows];
+    updatedRows.splice(index, 1);
+    setRows(updatedRows);
+  };
   return (
     <div className="container">
-      <table  >
+      <table>
         <thead>
           <tr>
             <th>Name</th>
@@ -28,58 +46,73 @@ setEditableRowId(null);
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => {
+          {rows.map((row, index) => {
             return (
-              <tr key={row.id} onClick={()=>handleEdit(row.id)}>
-                <td>
-                  {
-                    editableRowId===  row.id ?<input value={row.name}/>:
-                    row.name
-                  }</td>
-                   <td>
-                  {
-                    editableRowId===  row.id ?<input value={row.country}/>:
-                    row.country
-                  }</td>
-                    <td>
-                  {
-                    editableRowId===  row.id ?<input value={row.name}/>:
-                    row.name
-                  }</td>
-                   <td>
-                  {
-                    editableRowId===  row.id ?
-                    (
-                    <>
-                    <button className="btn2"  onClick={()=>handleSave(row.id,{name:'',country:'',password:''})}>Save</button>
-                    
-                   
-                    </> ):(
-                      <>
-                      <button className="btn2" onClick={()=>handleEdit(row.id)} >Update</button>
-                      <button className="btn3" onClick={()=>onDelete(row.id)} >Delete</button>
-                      </>
-                    )
-                  }
+              <tr key={index}>
+                {!row.editing && <td>{row.name}</td>}
+                {!row.editing && <td>{row.country}</td>}
+                {!row.editing && <td>{row.password}</td>}
+                {row.editing && (
+                  <td>
+                    <input
+                      className="editable"
+                      type="text"
+                      value={row.name}
+                      onChange={(e) => {
+                        const updatedRows = [...rows];
+                        updatedRows[index].name = e.target.value;
+                        setRows(updatedRows);
+                      }}
+                    />
                   </td>
-
-                  
-                  {/* {info.name}</td> */}
-                {/* <td>{info.country}</td>
-                <td>{info.password}</td> */}
-                {/* <td>
-                  <button className="btn2" onClick={()=>handleEdit(row.id)} >Update</button>
-                  <button className="btn3" onClick={()=>onDelete(row.id)} >Delete</button>
-                </td> */}
+                )}
+                {row.editing && (
+                  <td>
+                    <input
+                      type="text"
+                      value={row.country}
+                      onChange={(e) => {
+                        const updatedRows = [...rows];
+                        updatedRows[index].country = e.target.value;
+                        setRows(updatedRows);
+                      }}
+                    />
+                  </td>
+                )}
+                {row.editing && (
+                  <td>
+                    <input
+                      type="tel"
+                      value={row.password}
+                      onChange={(e) => {
+                        const updatedRows = [...rows];
+                        updatedRows[index].password = e.target.value;
+                        setRows(updatedRows);
+                      }}
+                    />
+                  </td>
+                )}
+                <td>
+                  {!row.editing && (
+                    <button className="btn2" onClick={() => editRow(row)}>
+                      Edit
+                    </button>
+                  )}
+                  { row.editing&&(
+                 <button className="btn2" onClick={() => saveRow(row)}>
+                 Save
+               </button>
+           ) }
+                 <button className="btn3" onClick={() => deleteRow(index)}>
+                    Delete
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      
-     
-        </div>
-     
+    </div>
   );
 }
 export default TableDisplay;
